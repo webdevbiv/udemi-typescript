@@ -1,25 +1,23 @@
-var User;
-(function (User) {
-    User[User["ADMIN"] = 0] = "ADMIN";
-    User[User["READ_ONLY"] = 1] = "READ_ONLY";
-    User[User["AUTHOR"] = 2] = "AUTHOR";
-})(User || (User = {}));
-var person = {
-    name: "Max",
-    age: 30,
-    hobbies: ["Sports", "Cooking"],
-    role: [2, "author"],
-    user: User.ADMIN, //enum
-};
-person.role.push("admin");
-// person.role[1] = 10;
-var favoriteActivities;
-favoriteActivities = ["Sports", 1];
-console.log(person.hobbies);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+// union types
+function combine(input1, input2, resultConversion) {
+    var result;
+    if ((typeof input1 === "number" && typeof input2 === "number") ||
+        resultConversion === "as-number") {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+    // if (resultConversion === "as-number") {
+    //   return +result;
+    // } else {
+    //   return result.toString();
+    // }
 }
-if (person.user === User.ADMIN) {
-    console.log("is admin");
-}
+var combinedAges = combine(30, 26, "as-number");
+console.log(combinedAges);
+var combinedStringAges = combine("30", "26", "as-number");
+console.log(combinedStringAges);
+var combinedNames = combine("Max", "Anna", "as-text");
+console.log(combinedNames);
