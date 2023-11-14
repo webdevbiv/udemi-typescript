@@ -1,8 +1,8 @@
 // union types
 function combine(
-  input1: number | string,
-  input2: number | string,
-  resultConversion: "as-number" | "as-text"
+  input1: number | string, //union
+  input2: number | string, //union
+  resultConversion: "as-number" | "as-text" //union
 ) {
   let result;
   if (
