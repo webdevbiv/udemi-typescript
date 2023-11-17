@@ -108,7 +108,7 @@ console.log(accounting.mostRecentReport);
 accounting.addEmployee("Max");
 accounting.addEmployee("Manu");
 
-// accounting.printReports();
+accounting.printReports();
 // accounting.printEmployeeInformation();
 accounting.describe();
 
