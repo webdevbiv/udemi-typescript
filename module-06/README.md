@@ -1,4 +1,4 @@
-# Module content
+# Module 06 - TypeScript
 
 - Intersection Types
 - Type Guards
